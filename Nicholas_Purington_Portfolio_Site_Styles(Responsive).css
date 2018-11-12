@@ -51,14 +51,15 @@ hr {
 }
 
 .main_content {
-	text-align: justify-all;
 	position: relative;
 	z-index: 0;
+	min-height: 35vh;
+	display: inline-block;
 }
 
 .nick-head {
 	position: absolute;
-	top: 13vh;
+	top: 9em;
 	left: 3vw;
 	z-index: 1;
 	max-width: 20%;
@@ -67,7 +68,7 @@ hr {
 .bio-text-intro {
 	position: absolute;
 	left: 24vw;
-	top: 9vh;
+	top: 5vh;
 	z-index: 1;
 	max-width: 30%;
 	max-height: 10%;
@@ -76,14 +77,13 @@ hr {
 	color: #FFFEB1;
 	background: url(Images/dark_wood_texture.jpg);
 	border-radius: 40px;
-	padding: 1.5vh 2.5vw 1.5vh 2.5vw;
-	margin: 1vw;
+	padding: 2vw;
 }
 
 .bio-text {
 	position: absolute;
 	left: 24vw;
-	top: 19vh;
+	top: 22vh;
 	z-index: 1;
 	max-width: 65%;
 	max-height: 70%;
@@ -92,8 +92,7 @@ hr {
 	color: #FFFEB1;
 	background: url(Images/dark_wood_texture.jpg);
 	border-radius: 40px;
-	padding: 1.5vh 2.5vw 1.5vh 2.5vw;
-	margin: 1vw;
+	padding: 3vw;
 }
 
 img {
@@ -113,44 +112,29 @@ img {
 	color: #7d97ad;
 }
 
-footer {
+.footer {
 	display: flex;
-	justify-content: space-between;	
+	flex-wrap: wrap;
+	justify-content: space-evenly;
 }
 
-.nav_image_l {
-	
+.nav_image {
+	max-width: 30%;
+	max-height: 30%;
 	flex-direction: row;
-	margin-left: 0;
-}
-
-.nav_image_c {
+	margin: 0;
+	padding: 1%;
 	
-	flex-direction: row;
-}
-
-.nav_image_r {
-	
-	flex-direction: row;
-	margin-right: 0;
 }
 
 .fig_text {
 	font-family: Starway, Courier;
-	font-weight: normal;
-	width: auto;
-	height: auto;
-	max-width: 100%;
-	max-height: 100%;
+	font-size: 2rem;
 }
 
 .link_text {
 	font-family: Starway, Courier;
-	font-weight: normal;
-	width: auto;
-	height: auto;
-	max-width: 100%;
-	max-height: 100%;
+	font-size: 1rem;
 }
 
 figcaption {
@@ -162,7 +146,6 @@ figcaption {
 @media screen and (max-width: 900px) {
 	html {
 	margin: 20px;
-	background-color: red;
 	}
 
 	.header	{
@@ -173,7 +156,7 @@ figcaption {
 		margin-left: 20px;
 		margin-top: 5px;
 		margin-bottom: 10px;
-		max-width: 40%;
+		max-width: 35%;
 	}
 
 	.header_title {
@@ -191,7 +174,7 @@ figcaption {
 
 	hr {
 		height: 3px;
-		margin: 5px;
+		/* margin: 5px; */
 	}
 
 	.main_image {
@@ -199,20 +182,19 @@ figcaption {
 	}
 
 	.nick-head {
-	top: 8vh;
+	top: 4em;
 	}
 
 	.bio-text-intro {
-		top: 4vh;
+		top: 2em;
 	}
 
 	.bio-text {
-		top: 15vh;
+		top: 7em;
 	}
 
 	img {
 		max-width: 100%;
-		max-height: 100%;
 	}
 
 	.footer_title {
@@ -223,81 +205,101 @@ figcaption {
 	}
 
 	footer {
-		display: block;
+		display: flex;
+		flex-direction: column;
+		justify-content: left;
 		width: 100%;
-		height: 800px;	
+		height: 800px;
 	}
 
-	.nav_image_l {
-		display: flex;
-		
-		margin: 0;
-		margin-bottom: 75px;
+	.nav_image {
 		width: 50vw;
 		height: 50vw;
-		float: left;
-	}
-
-	.nav_image_c {
-		display: flex;
-		
-		margin: 0;
-		margin-bottom: 75px;
-		width: 50vw;
-		height: 50vw;
-		float: left;
-	}
-
-	.nav_image_r {
-		display: flex;
-		
-		margin: 0;
-		margin-bottom: 75px;
-		width: 50vw;
-		height: 50vw;
-		float: left;
 	}
 
 	.fig_text {
-		font-size: 15pt;
-		text-align: center;
-		width: 45vw;
-		margin-top: 35%;
+		font-size: .5rem;
 	}
 
 	.link_text {
-		font-size: 12pt;
-		text-align: center;
-		width: 45vw;
-	}
-
-	figcaption {
-		width: 200vw;
-		margin: 0;
+		font-size: .5rem;
 	}
 }
 
-@media screen and (max-width: 600px) {
-	html {
-	background-color: green;
-	}
+@media screen and (max-width: 400px) {
 
 	.header	{
-	height: 140px;
+		height: 140px;
+	}
+
+	.header_logo {
+		margin-top: 45px;
+	}
+
+	hr {
+		height: 3px;
+		/* margin: 5px; */
+	}
+
+	.main_content {
+		position: relative;
+		z-index: 0;
+		height: 30vh;
+		display: inline-flex;
+	}
+
+	.shag-carpet {
+		height: 100%;
 	}
 
 	.nick-head {
-	top: 5vh;
+		top: 10vh;
+		max-width: 25%;
 	}
 
 	.bio-text-intro {
-		top: 1vh;
+		top: 4vh;
+		padding: 1.5vh 5vw 1.5vh 5vw;
 	}
 
 	.bio-text {
-		top: 6vh;
+		top: 10vh;
 		padding: 1.5vh 5vw 1.5vh 5vw;
 		max-width: 75%;
+	}
+
+	.footer_title {
+		font-size: 30pt;
+		margin-top: 75px;
+		margin-bottom: 50px;
+		text-align: center;
+	}
+
+	.footer {
+		justify-content: center;
+		flex-wrap: nowrap;
+		height: auto;
+	}
+
+	.nav_image {
+		margin: auto;
+		margin-bottom: 50px;
+		max-width: 300px;
+		height: auto;
+	}
+
+	.fig_text {
+		font-family: Starway, Courier;
+		font-size: 1.5rem;
+	}
+
+	.link_text {
+		font-family: Starway, Courier;
+		font-size: 1rem;
+	}
+
+	figcaption {
+		text-align: center;
 	}
 
 }
