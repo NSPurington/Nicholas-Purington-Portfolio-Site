@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html class = 'bg'>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+	<title>Base Metals</title>
+</head>
+
+<header>
+	<div class = 'title'>
+		<a href="{{url_for('showLogin')}}">
+			<button class="lgn-btn" id="new-basemetal">
+				<span aria-hidden="true"></span>Login
+			</button>
+		</a>
+		<div class = 'title-inner'>
+			<h1>Base Metals</h1>
+			<hr>
+		</div>
+	</div>	
+</header>
+
+<body>
+
+	<div class = 'flash'>
+	
+	{% with messages = get_flashed_messages() %}
+    	{% if messages %}
+          
+        <ul>
+        {% for message in messages %}
+            <li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+
+	</div>
+
+	<div>
+		<a href="{{url_for('showLogin')}}">
+			<button class="btn" id="new-basemetal">
+				<span class="span" aria-hidden="true"></span>Add Base Metal
+			</button>
+		</a>
+	</div>
+	
+	<aside>
+
+		{% for basemetal in basemetals %}
+		<div>	
+			<a class = "basemetal" href = "{{url_for('showAlloy', basemetal_id = basemetal.id )}}">
+				<h2 class="metal-text">{{basemetal.name}}</h2>
+			</a>
+		</div>
+		
+		<div>	
+			<a class = "edit-link" href = "{{url_for('showLogin')}}">
+				<p>Edit</p>
+			</a>
+		
+			<a class = "delete-link" href = "{{url_for('showLogin')}}">
+				<p>Delete</p>
+			</a>	
+		</div>
+
+		{% endfor %}
+	</aside>
+
+</body>
+</html>
