@@ -2,3 +2,4 @@
 templates/Linux_Server_Project/client_secrets.json
 templates/Linux_Server_Project/database_setup.pyc
 templates/Linux_Server_Project/database_setup.sublime-workspace
+templates/Linux_Server_Project/LightsailDefaultPrivateKey-us-west-2.pem
