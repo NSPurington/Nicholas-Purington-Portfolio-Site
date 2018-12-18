@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html class = 'bg'>
+<head>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+	<title>Edit Basemetal</title>
+</head>
+
+<header>
+	<div class = 'title'>
+		<div class = 'title-inner'>
+			<h1>Edit {{basemetal.name}}</h1>
+			<hr>
+		</div>
+	</div>	
+</header>
+
+<body>
+	<form action="{{ url_for('editBaseMetal',basemetal_id = basemetal.id)}}" method = "post">
+		<div class="entry">
+			<label class="nbm-text" for="name">Name:</label>
+			<input type ="text" class="nbm-input" maxlength="8" name="name" value="{{basemetal.name}}">
+			<button type="submit" class="btn" id="submit" type="submit">
+			<span aria-hidden="true"></span>Save</button>
+			<a href = '{{url_for('showBaseMetals')}}'>
+				<button type="button" class="btn">
+				<span aria-hidden="true"></span>Cancel</button>
+			</a>
+		</div>
+	</form>	
+</body>
+
+
