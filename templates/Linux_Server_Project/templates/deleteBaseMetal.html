@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html class = 'bg'>
+<head>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+	<title>Delete Basemetal</title>
+</head>
+
+<header>
+	<div class = 'title'>
+		<div class = 'title-inner'>
+			<h1>Delete {{basemetal.name}}</h1>
+			<hr>
+		</div>
+	</div>	
+</header>
+
+<body>
+	<form action="{{ url_for('deleteBaseMetal',basemetal_id = basemetal.id)}}" method = "POST">
+		<div class="entry">	
+			<h3 class="a-text">Are you sure you want to delete: {{basemetal.name}}?</h3>
+			<button type="submit" class="btn" value="Delete">
+			<span aria-hidden="true"></span>Delete</button>
+			<a href = '{{url_for("showBaseMetals")}}'>
+				<button type="button" class="btn">
+				<span aria-hidden="true"></span> Cancel</button>
+			</a>		
+		</div>
+	</form>	
+</body>
