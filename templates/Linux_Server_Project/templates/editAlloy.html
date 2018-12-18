@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html class = 'bg'>
+<head>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+	<title>Edit Alloy</title>
+</head>
+
+<header>
+	<div class = 'title'>
+		<div class = 'title-inner'>
+			<h1>Edit {{alloy.name}}</h1>
+			<hr>
+		</div>
+	</div>	
+</header>
+
+<body>
+	<form action="{{ url_for('editAlloy',basemetal_id = basemetal.id, alloy_id = alloy.id)}}" method = "POST">
+		<div class="entry">
+			<label class="nbm-text" for="name">Name:</label>
+			<div>
+				<input class="nbm-input" type ="text" maxlength="30" name="name" value="{{alloy.name }}">
+			</div>
+			<div>
+				<label class="nbm-text" for="description">Description:</label>
+			</div>
+			<textarea class="nbm-input" maxlength="400" rows="20" name="description">{{alloy.description}}</textarea>
+			<div>
+				<button type="submit" class="btn" id="submit" type="submit">
+				<span class="" aria-hidden="true"></span>Save</button>
+				<a href = '{{url_for("showAlloy", basemetal_id = basemetal.id)}}'>
+					<button type="button" class="btn">
+					<span aria-hidden="true"></span> Cancel</button>
+				</a>
+			</div>
+		</div>
+	</form>	
+</body>
